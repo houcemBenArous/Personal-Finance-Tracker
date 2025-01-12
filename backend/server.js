@@ -3,6 +3,8 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./src/models');
 const authRoutes = require('./src/routes/auth.routes');
+const transactionRoutes = require('./src/routes/transaction.routes');
+const savingsRoutes = require('./src/routes/savings.routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +14,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/savings', savingsRoutes);
 
 // Test route
 app.get('/', (req, res) => {
