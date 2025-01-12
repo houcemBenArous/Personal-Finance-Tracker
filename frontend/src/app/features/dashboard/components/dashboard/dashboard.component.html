@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Tableau de bord</h1>
+    <div class="user-info" *ngIf="currentUser">
+      <span>{{ currentUser.name }}</span>
+      <button (click)="onLogout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <div class="dashboard-content">
+    <app-transaction-list></app-transaction-list>
+    <app-savings-goals></app-savings-goals>
+  </div>
+</div> 
