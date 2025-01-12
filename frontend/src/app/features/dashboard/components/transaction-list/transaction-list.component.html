@@ -1,0 +1,23 @@
+<div class="transactions-container">
+  <h2>Transactions récentes</h2>
+  
+  <div *ngIf="loading" class="loading">
+    Chargement des transactions...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div class="transaction-list" *ngIf="!loading && !error">
+    <div class="transaction-item" *ngFor="let transaction of transactions">
+      <div class="transaction-info">
+        <span class="category">{{ transaction.category }}</span>
+        <span class="date">{{ transaction.date | date }}</span>
+      </div>
+      <div class="amount" [ngClass]="transaction.type">
+        {{ transaction.amount | currency }}
+      </div>
+    </div>
+  </div>
+</div> 

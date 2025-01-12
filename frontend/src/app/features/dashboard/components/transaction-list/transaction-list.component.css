@@ -1,0 +1,53 @@
+.transactions-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.transaction-list {
+  margin-top: 1rem;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-weight: bold;
+}
+
+.date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.amount.INCOME {
+  color: #28a745;
+}
+
+.amount.EXPENSE {
+  color: #dc3545;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 1rem;
+}
+
+.error {
+  color: #dc3545;
+} 
