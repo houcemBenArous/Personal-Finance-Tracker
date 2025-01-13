@@ -7,8 +7,17 @@
     </div>
   </header>
 
+  <div class="dashboard-actions">
+    <app-add-transaction></app-add-transaction>
+    <app-add-savings-goal></app-add-savings-goal>
+  </div>
+
   <div class="dashboard-content">
-    <app-transaction-list></app-transaction-list>
-    <app-savings-goals></app-savings-goals>
+    <div class="main-content">
+      <app-transaction-list></app-transaction-list>
+    </div>
+    <div class="side-content">
+      <app-savings-goals></app-savings-goals>
+    </div>
   </div>
 </div> 
