@@ -1,0 +1,74 @@
+.savings-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.goals-list {
+  margin-top: 1rem;
+}
+
+.goal-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.goal-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.goal-amounts {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.goal-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.goal-status.active {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.goal-status.completed {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.goal-status.cancelled {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 1rem;
+}
+
+.error {
+  color: #dc3545;
+} 
