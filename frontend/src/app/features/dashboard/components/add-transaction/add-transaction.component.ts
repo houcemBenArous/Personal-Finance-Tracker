@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TransactionService } from '../../../../core/services/transaction.service';
 import { StateService } from '../../../../core/services/state.service';
 
 @Component({
   selector: 'app-add-transaction',
   templateUrl: './add-transaction.component.html',
-  styleUrls: ['./add-transaction.component.css']
+  styleUrls: ['./add-transaction.component.css'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule]
 })
 export class AddTransactionComponent {
   transactionForm: FormGroup;

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { SavingsService } from '../../../../core/services/savings.service';
 import { StateService } from '../../../../core/services/state.service';
 
 @Component({
   selector: 'app-add-savings-goal',
   templateUrl: './add-savings-goal.component.html',
-  styleUrls: ['./add-savings-goal.component.css']
+  styleUrls: ['./add-savings-goal.component.css'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule]
 })
 export class AddSavingsGoalComponent {
   savingsForm: FormGroup;

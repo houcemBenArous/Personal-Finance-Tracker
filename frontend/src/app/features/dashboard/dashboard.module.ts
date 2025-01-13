@@ -9,17 +9,15 @@ import { AddTransactionComponent } from './components/add-transaction/add-transa
 import { AddSavingsGoalComponent } from './components/add-savings-goal/add-savings-goal.component';
 
 @NgModule({
-  declarations: [
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    DashboardRoutingModule,
     DashboardComponent,
     TransactionListComponent,
     SavingsGoalsComponent,
     AddTransactionComponent,
     AddSavingsGoalComponent
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    DashboardRoutingModule
   ]
 })
 export class DashboardModule { } 

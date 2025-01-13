@@ -9,7 +9,7 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class HomeComponent {
   constructor(
-    private router: Router,
+    public router: Router,
     private authService: AuthService
   ) {
     if (this.authService.isAuthenticated()) {

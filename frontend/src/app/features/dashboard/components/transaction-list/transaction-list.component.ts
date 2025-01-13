@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TransactionService } from '../../../../core/services/transaction.service';
 import { Transaction } from '../../../../core/models/transaction.model';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-transaction-list',
   templateUrl: './transaction-list.component.html',
-  styleUrls: ['./transaction-list.component.css']
+  styleUrls: ['./transaction-list.component.css'],
+  standalone: true,
+  imports: [CommonModule, CurrencyPipe, DatePipe]
 })
 export class TransactionListComponent implements OnInit {
   transactions: Transaction[] = [];
