@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SavingsService } from '../../../../core/services/savings.service';
+import { StateService } from '../../../../core/services/state.service';
 
 @Component({
   selector: 'app-add-savings-goal',
@@ -13,7 +14,8 @@ export class AddSavingsGoalComponent {
 
   constructor(
     private fb: FormBuilder,
-    private savingsService: SavingsService
+    private savingsService: SavingsService,
+    private stateService: StateService
   ) {
     this.savingsForm = this.fb.group({
       name: ['', Validators.required],
@@ -27,6 +29,9 @@ export class AddSavingsGoalComponent {
       this.savingsService.createGoal(this.savingsForm.value).subscribe({
         next: () => {
           this.savingsForm.reset();
+          this.savingsService.getGoals().subscribe(
+            goals => this.stateService.updateSavingsGoals(goals)
+          );
         },
         error: (err) => this.error = err.error.message || 'Erreur lors de la création'
       });

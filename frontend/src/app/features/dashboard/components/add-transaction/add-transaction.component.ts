@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TransactionService } from '../../../../core/services/transaction.service';
+import { StateService } from '../../../../core/services/state.service';
 
 @Component({
   selector: 'app-add-transaction',
@@ -18,7 +19,8 @@ export class AddTransactionComponent {
 
   constructor(
     private fb: FormBuilder,
-    private transactionService: TransactionService
+    private transactionService: TransactionService,
+    private stateService: StateService
   ) {
     this.transactionForm = this.fb.group({
       type: ['EXPENSE', Validators.required],
@@ -37,7 +39,10 @@ export class AddTransactionComponent {
             type: 'EXPENSE',
             date: new Date().toISOString().split('T')[0]
           });
-          // Émettre un événement pour rafraîchir la liste
+          // Rafraîchir la liste
+          this.transactionService.getTransactions().subscribe(
+            transactions => this.stateService.updateTransactions(transactions)
+          );
         },
         error: (err) => this.error = err.error.message || 'Erreur lors de la création'
       });
